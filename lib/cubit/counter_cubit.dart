@@ -8,7 +8,7 @@ class CounterCubit extends Cubit<CounterState> {
 
   int teamBpoints = 0;
 
-  void TeamInrement({required String team, required int buttonNumber}) {
+  void teamInrement({required String team, required int buttonNumber}) {
     if (team == 'A') {
       teamApoints += buttonNumber;
       emit(CounterAIncrementState());
@@ -17,5 +17,12 @@ class CounterCubit extends Cubit<CounterState> {
       teamBpoints += buttonNumber;
       emit(CounterBIncrementState());
     }
+  }
+
+  void teamReset() {
+    teamApoints = 0;
+
+    teamBpoints = 0;
+    emit(ResetState());
   }
 }
