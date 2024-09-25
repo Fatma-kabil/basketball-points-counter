@@ -1,10 +1,11 @@
 import 'package:basketball_points/cubit/counter_cubit.dart';
 import 'package:basketball_points/cubit/counter_state.dart';
+import 'package:basketball_points/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({
+  const HomePage({
     super.key,
   });
 
@@ -50,52 +51,26 @@ class HomePage extends StatelessWidget {
                               color: Colors.grey[800],
                               fontWeight: FontWeight.w400),
                         ),
-                        ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: const Color(0xFF3AA6B9),
-                                minimumSize: const Size(150, 50)),
-                            onPressed: () {
-                              BlocProvider.of<CounterCubit>(context)
-                                  .teamInrement(team: 'A', buttonNumber: 1);
-                            },
-                            child: Text(
-                              'Add 1 Point',
-                              style: TextStyle(
-                                  color: Colors.grey[800],
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 18),
-                            )),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFF3AA6B9),
-                              minimumSize: const Size(150, 50)),
+                        customButton(
+                          text: 'Add 1 Point',
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamInrement(team: 'A', buttonNumber: 1);
+                          },
+                        ),
+                        customButton(
+                          text: 'Add 2 Point',
                           onPressed: () {
                             BlocProvider.of<CounterCubit>(context)
                                 .teamInrement(team: 'A', buttonNumber: 2);
                           },
-                          child: Text(
-                            'Add 2 Point',
-                            style: TextStyle(
-                                color: Colors.grey[800],
-                                fontWeight: FontWeight.w600,
-                                fontSize: 18),
-                          ),
                         ),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFF3AA6B9),
-                              minimumSize: const Size(150, 50)),
+                        customButton(
+                          text: 'Add 3 Point',
                           onPressed: () {
                             BlocProvider.of<CounterCubit>(context)
                                 .teamInrement(team: 'A', buttonNumber: 3);
                           },
-                          child: Text(
-                            'Add 3 Point',
-                            style: TextStyle(
-                                color: Colors.grey[800],
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600),
-                          ),
                         ),
                       ],
                     ),
@@ -128,52 +103,26 @@ class HomePage extends StatelessWidget {
                               color: Colors.grey[800],
                               fontWeight: FontWeight.w400),
                         ),
-                        ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: const Color(0xFF3AA6B9),
-                                minimumSize: const Size(150, 50)),
-                            onPressed: () {
-                              BlocProvider.of<CounterCubit>(context)
-                                  .teamInrement(team: 'B', buttonNumber: 1);
-                            },
-                            child: Text(
-                              'Add 1 Point',
-                              style: TextStyle(
-                                  color: Colors.grey[800],
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 18),
-                            )),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFF3AA6B9),
-                              minimumSize: const Size(150, 50)),
+                        customButton(
+                          text: 'Add 1 Point',
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamInrement(team: 'B', buttonNumber: 1);
+                          },
+                        ),
+                        customButton(
+                          text: 'Add 2 Point',
                           onPressed: () {
                             BlocProvider.of<CounterCubit>(context)
                                 .teamInrement(team: 'B', buttonNumber: 2);
                           },
-                          child: Text(
-                            'Add 2 Point',
-                            style: TextStyle(
-                                color: Colors.grey[800],
-                                fontWeight: FontWeight.w600,
-                                fontSize: 18),
-                          ),
                         ),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFF3AA6B9),
-                              minimumSize: const Size(150, 50)),
+                        customButton(
+                          text: 'Add 3 Point',
                           onPressed: () {
                             BlocProvider.of<CounterCubit>(context)
                                 .teamInrement(team: 'B', buttonNumber: 3);
                           },
-                          child: Text(
-                            'Add 3 Point',
-                            style: TextStyle(
-                                color: Colors.grey[800],
-                                fontWeight: FontWeight.w600,
-                                fontSize: 18),
-                          ),
                         ),
                       ],
                     ),
